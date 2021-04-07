@@ -18,24 +18,4 @@ jobs:
 
       - name: Build
         run: |
-          dotnet publish -c release -r win-x64 -o binaries
-          zip -r binaries.zip binaries
-          
-      # Get the assembly version, use this as the tag.
-      # That way, to do a new release, just update the assembly version on the next commit
-      - name: Get Assembly Version
-        id: get_version
-        uses: jasondavis303/net-sdk-proj-file-version@v1.0.1
-        with: 
-          PROJ_FILE: s3u/s3u.csproj        
-      
-      - name: Tag and Release
-        uses: jasondavis303/tag-and-release-and-upload@1.3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          
-          # Use the version from the previous step
-          version: v${{ steps.get_version.outputs.ASSEMBLY_VERSION }}
-          
-          assets: '[ "binaries.zip" ]'
-          overwrite: false          
+          dotnet publish -c release
