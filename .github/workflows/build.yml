@@ -18,4 +18,4 @@ jobs:
 
       - name: Build
         run: |
-          dotnet publish -c release
+          dotnet build -c release
