@@ -18,8 +18,8 @@ jobs:
 
       - name: Build
         run: |
-          dotnet build -c Release
-          zip -r binaries.zip ./s3u/bin/Release/net5.0
+          dotnet publish -c Release -o binaries
+          zip -r binaries.zip binaries
           
       # Get the assembly version, use this as the tag.
       # That way, to do a new release, just update the assembly version on the next commit
