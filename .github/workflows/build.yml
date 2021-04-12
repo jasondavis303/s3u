@@ -18,6 +18,7 @@ jobs:
 
       - name: Build
         run: |
+          chmod +x tsv
           ./tsv --xml-files s3u/s3u.csproj --env-file $GITHUB_ENV
           dotnet publish -r win-x64 -p:PublishSingleFile=true --no-self-contained -c release -o publish
           dotnet publish -r linux-x64 -p:PublishSingleFile=true --no-self-contained -c release -o publish
