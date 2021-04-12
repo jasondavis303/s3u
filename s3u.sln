@@ -3,11 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "s3u", "s3u\s3u.csproj", "{7B4175FE-B406-417F-8574-3989B7A2EBAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "s3u", "s3u\s3u.csproj", "{7B4175FE-B406-417F-8574-3989B7A2EBAD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2B703F73-5101-4094-B057-CEDA8D6DDCF1}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		tsv = tsv
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{CE39CB3E-BF26-4758-870E-750FAE5C75E9}"
