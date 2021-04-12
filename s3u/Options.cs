@@ -2,27 +2,39 @@
 
 namespace s3u
 {
-    class Options
+    public class Options
     {
+        /// <summary>
+        /// S3 Endpoint (https://s3.us-west-1.amazonaws.com)
+        /// </summary>
         [Option("endpoint", Required = true)]
         public string Endpoint { get; set; }
 
-        [Option("key", Required = true)]
-        public string Key { get; set; }
+        [Option("access-key", Required = true)]
+        public string AccessKey { get; set; }
 
-        [Option("secret", Required = true)]
-        public string Secret { get; set; }
+        [Option("access-secret", Required = true)]
+        public string AccessSecret { get; set; }
 
-        [Option("source", Required = true)]
+        /// <summary>
+        /// Source directory
+        /// </summary>
+        [Option("source", Required = true, HelpText = "Source directory")]
         public string Source { get; set; }
 
         [Option("bucket", Required = true)]
         public string Bucket { get; set; }
 
-        [Option("target", Required = true)]
+        /// <summary>
+        /// Target directory
+        /// </summary>
+        [Option("target", Required = true, HelpText = "Target directory")]
         public string Target { get; set; }
 
         [Option("overwrite")]
         public bool Overwrite { get; set; }
+
+        [Option("verbose")]
+        public bool Verbose { get; set; }
     }
 }
