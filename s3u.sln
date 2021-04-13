@@ -8,7 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2B703F73-5101-4094-B057-CEDA8D6DDCF1}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
-		tsv = tsv
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{CE39CB3E-BF26-4758-870E-750FAE5C75E9}"
