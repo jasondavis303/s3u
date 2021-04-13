@@ -9,6 +9,10 @@ namespace s3u
         {
             try
             {
+                Console.WriteLine();
+                Console.WriteLine("S3 Directory Uploader");
+                Console.WriteLine();
+
                 Parser.Default.ParseArguments<Options>(args)
                 .WithParsed<Options>(opts =>
                 {
