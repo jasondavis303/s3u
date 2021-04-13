@@ -11,11 +11,11 @@ namespace s3u
     {
         public static async Task UploadAsync(Options opts, CancellationToken cancellationToken = default)
         {
-            //if (opts.Endpoint.StartsWith("http://", StringComparison.CurrentCultureIgnoreCase))
-            //    opts.Endpoint = opts.Endpoint.Substring(7);
+            if (opts.Endpoint.StartsWith("http://", StringComparison.CurrentCultureIgnoreCase))
+                opts.Endpoint = opts.Endpoint.Substring(7);
 
-            //if (!opts.Endpoint.StartsWith("https://", StringComparison.CurrentCultureIgnoreCase))
-            //    opts.Endpoint = "https://" + opts.Endpoint;
+            if (!opts.Endpoint.StartsWith("https://", StringComparison.CurrentCultureIgnoreCase))
+                opts.Endpoint = "https://" + opts.Endpoint;
 
             if (!opts.Source.EndsWith(Path.DirectorySeparatorChar))
                 opts.Source += Path.DirectorySeparatorChar;
