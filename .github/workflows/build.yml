@@ -20,7 +20,7 @@ jobs:
         run: |
           curl --location --output tsv https://github.com/jasondavis303/TimestampVersion/releases/latest/download/tsv
           chmod +x tsv
-          ./tsv --xml-files s3u/s3u.csproj --env-file $GITHUB_ENV
+          ./tsv --xml-files s3u/s3u.csproj --env-file $GITHUB_ENV --verbose
           dotnet publish -r win-x64 -p:PublishSingleFile=true --no-self-contained -c release -o publish
           dotnet publish -r linux-x64 -p:PublishSingleFile=true --no-self-contained -c release -o publish
           dotnet pack -c release -o nuget
