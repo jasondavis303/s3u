@@ -27,9 +27,7 @@ jobs:
           dotnet nuget push "nuget/*.nupkg" --skip-duplicate -k ${{secrets.NUGET_KEY}} -s https://api.nuget.org/v3/index.json
 
       - name: Tag and Release
-        uses: jasondavis303/tag-and-release-and-upload@v1.4
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }} 
-          version: v${{ env.TIMESTAMP_VERSION }}          
-          assets: '[ "./publish/s3u.exe", "./publish/s3u" ]'
-          overwrite: true
+        run: |
+          curl --location --output tar https://github.com/jasondavis303/TagAndRelease/releases/latest/download/tar
+          chmod +x tar
+          ./tar --owner jasondavis303 --repo-name s3u --github-token ${{ secrets.GITHUB_TOKEN }} --set-version ${{ env.TIMESTAMP_VERSION }} --assets publish/s3u publish/s3u.exe --verbose
