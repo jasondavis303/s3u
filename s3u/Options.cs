@@ -1,4 +1,5 @@
 ﻿using CommandLine;
+using System.Collections.Generic;
 
 namespace s3u
 {
@@ -21,6 +22,13 @@ namespace s3u
         /// </summary>
         [Option("source", Required = true, HelpText = "Source directory")]
         public string Source { get; set; }
+
+        [Option("include", HelpText = "Filter to only include the specified files", SetName = "Filter")]
+        public IEnumerable<string> Include { get; set; } 
+
+        [Option("exclude", HelpText = "Filter to exclude specified files", SetName = "Filter")]
+        public IEnumerable<string> Exclude { get; set; }
+
 
         [Option("bucket", Required = true)]
         public string Bucket { get; set; }

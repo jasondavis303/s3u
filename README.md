@@ -17,6 +17,10 @@ Usage: s3u.exe [options]
 
   --source           Required. Source directory
 
+  --include          Filter to only include the specified files
+
+  --exclude          Filter to exclude specified files
+
   --bucket           Required.
 
   --target           Required. Target directory
